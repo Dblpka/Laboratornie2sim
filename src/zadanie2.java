@@ -1,45 +1,33 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class zadanie2 {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        // Пример матрицы 3x3
+        int[][] matrix = {
+                {10, 20, 30},
+                {40, 50, 60},
+                {70, 80, 90}
+        };
 
-        System.out.print("Введите целое число: ");
-        // Проверяем, что пользователь ввел именно целое число
-        if (scanner.hasNextInt()) {
-            int number = scanner.nextInt();
+        try {
+            System.out.print("Введите номер столбца для вывода (от 0 до 2): ");
+            int colIndex = scanner.nextInt();
 
-            System.out.print("Двоичное представление: ");
-            if (number == 0) {
-                System.out.print(0);
-            } else {
-                convertToBinary(number);
+            System.out.println("Элементы столбца " + colIndex + ":");
+            for (int i = 0; i < matrix.length; i++) {
+                // Если colIndex неверный, здесь вылетит ArrayIndexOutOfBoundsException
+                System.out.println(matrix[i][colIndex]);
             }
-            System.out.println(); // Перенос строки в конце вывода
-        } else {
-            System.out.println("Ошибка: введено не целое число.");
+
+        } catch (InputMismatchException e) {
+            System.out.println("Ошибка ввода: Ожидалось целое число, а введена строка или иной символ.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Ошибка индексации: Столбца с таким номером не существует в матрице.");
+        } finally {
+            System.out.println("Блок finally: Завершение работы программы (Задание 2).");
+            scanner.close();
         }
-
-        scanner.close();
-    }
-
-    /**
-     * Рекурсивный метод для перевода числа в двоичную систему.
-     * Он делит число на 2, уходит в рекурсию, а затем на выходе
-     * из нее (обратный ход) печатает остатки от деления.
-     */
-    public static void convertToBinary(int n) {
-        // Базовый случай для завершения рекурсии
-        if (n == 0) {
-            return;
-        }
-
-        // Рекурсивный вызов: передаем результат деления нацело на 2
-        convertToBinary(n / 2);
-
-        // Печатаем остаток от деления. 
-        // Так как вывод идет ПОСЛЕ рекурсивного вызова, цифры напечатаются в правильном порядке
-        System.out.print(n % 2);
     }
 }
