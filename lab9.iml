@@ -7,5 +7,20 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" name="poi-ooxml-full-5.2.3" level="project" />
+    <orderEntry type="library" name="poi-5.2.3" level="project" />
+    <orderEntry type="library" name="poi-examples-5.2.3" level="project" />
+    <orderEntry type="library" name="poi-ooxml-full-5.2.4" level="project" />
+    <orderEntry type="library" name="poi-scratchpad-5.2.3" level="project" />
+    <orderEntry type="library" name="poi-ooxml-lite-5.2.3" level="project" />
+    <orderEntry type="library" name="poi-ooxml-full-5.2.5" level="project" />
+    <orderEntry type="library" name="poi-ooxml-5.2.3" level="project" />
+    <orderEntry type="library" name="xmlbeans-5.1.1" level="project" />
+    <orderEntry type="library" name="jakarta.activation-2.0.1" level="project" />
+    <orderEntry type="library" name="xmlsec-3.0.0" level="project" />
+    <orderEntry type="library" name="batik-xml-1.14" level="project" />
+    <orderEntry type="library" name="poi-bin-5.2" level="project" />
+    <orderEntry type="library" name="jsoup-1.22.2" level="project" />
   </component>
 </module>
